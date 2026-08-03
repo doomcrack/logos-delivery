@@ -56,7 +56,7 @@ let
       ${pathArgs} \
       --path:$NAT_TRAV \
       --path:$NAT_TRAV/src \
-      --passL:"-L${zerokitRln}/lib -lrln${pkgs.lib.optionalString pkgs.stdenv.isLinux " -lstdc++"}" \
+      --passL:"-L${zerokitRln}/lib -lrln${pkgs.lib.optionalString pkgs.stdenv.isLinux " -lstdc++"}${pkgs.lib.optionalString pkgs.stdenv.isDarwin " -lc++"}" \
       ${nimDefineArgs} \
       --threads:on \
       --mm:refc \
